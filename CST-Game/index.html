@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayor for the Common Good</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TITLE HEADER -->
+  <header class="game-header">
+    <div class="header-inner">
+      <div class="game-title">
+        <span class="title-pixel">⚑</span>
+        <h1>Mayor<span class="title-accent"> for the</span> Common Good</h1>
+      </div>
+      <div class="header-right">
+        <div class="month-badge">
+          <span class="month-label">MONTH</span>
+          <span class="month-number" id="monthDisplay">1</span>
+          <span class="month-total">/ 36</span>
+        </div>
+        <button class="music-toggle" id="musicToggle" title="Toggle music">
+          <span class="music-icon" id="musicIcon">♪</span>
+          <span class="music-label" id="musicLabel">ON</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN GAME AREA -->
+  <main class="game-main">
+
+    <!-- LEFT: STAT PANEL -->
+    <aside class="stat-panel">
+      <div class="stat-panel-title">CITY STATS</div>
+
+      <div class="stat-item" data-stat="faith">
+        <div class="stat-header">
+          <span class="stat-icon">✝</span>
+          <span class="stat-label">Faith</span>
+          <span class="stat-value" id="faithVal">50</span>
+        </div>
+        <div class="stat-track">
+          <div class="stat-fill faith-fill" id="faithBar" style="width: 50%"></div>
+        </div>
+      </div>
+
+      <div class="stat-item" data-stat="economy">
+        <div class="stat-header">
+          <span class="stat-icon">$</span>
+          <span class="stat-label">Economy</span>
+          <span class="stat-value" id="economyVal">50</span>
+        </div>
+        <div class="stat-track">
+          <div class="stat-fill economy-fill" id="economyBar" style="width: 50%"></div>
+        </div>
+      </div>
+
+      <div class="stat-item" data-stat="people">
+        <div class="stat-header">
+          <span class="stat-icon">♥</span>
+          <span class="stat-label">People</span>
+          <span class="stat-value" id="peopleVal">50</span>
+        </div>
+        <div class="stat-track">
+          <div class="stat-fill people-fill" id="peopleBar" style="width: 50%"></div>
+        </div>
+      </div>
+
+      <div class="stat-item" data-stat="environment">
+        <div class="stat-header">
+          <span class="stat-icon">🌿</span>
+          <span class="stat-label">Environment</span>
+          <span class="stat-value" id="envVal">50</span>
+        </div>
+        <div class="stat-track">
+          <div class="stat-fill env-fill" id="envBar" style="width: 50%"></div>
+        </div>
+      </div>
+
+      <div class="stat-item" data-stat="justice">
+        <div class="stat-header">
+          <span class="stat-icon">⚖</span>
+          <span class="stat-label">Justice</span>
+          <span class="stat-value" id="justiceVal">50</span>
+        </div>
+        <div class="stat-track">
+          <div class="stat-fill justice-fill" id="justiceBar" style="width: 50%"></div>
+        </div>
+      </div>
+
+      <div class="stat-item" data-stat="infrastructure">
+        <div class="stat-header">
+          <span class="stat-icon">⚙</span>
+          <span class="stat-label">Infrastructure</span>
+          <span class="stat-value" id="infraVal">50</span>
+        </div>
+        <div class="stat-track">
+          <div class="stat-fill infra-fill" id="infraBar" style="width: 50%"></div>
+        </div>
+      </div>
+
+      <!-- Term progress + approval rating -->
+      <div class="progress-strip progress-strip--sidebar">
+
+        <div class="progress-row">
+          <div class="progress-label">TERM PROGRESS</div>
+          <div class="term-track">
+            <div class="term-fill" id="termFill" style="width: 2.7%"></div>
+            <div class="term-markers">
+              <span>0</span><span>9</span><span>18</span><span>27</span><span>36</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-row">
+          <div class="progress-label">APPROVAL RATING</div>
+          <div class="reelect-track">
+            <div class="reelect-fill" id="reelectFill" style="width: 0%"></div>
+            <span class="reelect-value" id="reelectValue">—</span>
+          </div>
+        </div>
+
+        <div class="progress-row">
+          <div class="progress-label">RE-ELECTION CHANCE
+            <span class="reelection-verdict" id="reelectionVerdict"></span>
+          </div>
+          <div class="reelection-track">
+            <div class="reelection-fill" id="reelectionFill" style="width: 0%"></div>
+            <span class="reelect-value" id="reelectionValue">—</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Advisor box -->
+      <div class="advisor-box">
+        <div class="advisor-portrait" id="advisorPortrait">
+          <div class="portrait-placeholder">👤</div>
+        </div>
+        <div class="advisor-name" id="advisorName">City Advisor</div>
+        <div class="advisor-quote" id="advisorQuote">"The city awaits your leadership, Mayor."</div>
+        <div class="advisor-traits" id="advisorTraits"></div>
+      </div>
+    </aside>
+
+    <!-- CENTER: SCENARIO + CITY VIEW + DECISIONS -->
+    <section class="scenario-panel">
+
+      <!-- 1. Scenario card (principle, title, description) -->
+      <div class="scenario-card">
+        <div class="principle-tag" id="principleTag">
+          <span class="principle-icon">✦</span>
+          <span id="principleText">Dignity of Work and Rights of Workers</span>
+        </div>
+        <h2 class="scenario-title" id="scenarioTitle">Factory Expansion Proposal</h2>
+        <div class="scenario-divider"></div>
+        <p class="scenario-desc" id="scenarioDesc">
+          A manufacturing company proposes building a new factory that would create hundreds of jobs but increase pollution near a working-class neighbourhood.
+        </p>
+      </div>
+
+      <!-- 2. City View panel -->
+      <div class="city-view-panel">
+        <img class="city-view-img" id="cityViewImg"
+             src="backgrounds/city_normal.png"
+             alt="City view" />
+      </div>
+
+      <!-- 3. Decision buttons -->
+      <div class="choices-area" id="choicesArea">
+
+        <button class="choice-btn choice-btn--primary" id="choice0">
+          <span class="choice-letter">A</span>
+          <div class="choice-main">
+            <span class="choice-text" id="choiceText0">Approve the factory to create jobs</span>
+            <span class="choice-hints" id="choiceHints0"></span>
+          </div>
+          <span class="choice-arrow">▶</span>
+        </button>
+
+        <button class="choice-btn choice-btn--secondary" id="choice1">
+          <span class="choice-letter">B</span>
+          <div class="choice-main">
+            <span class="choice-text" id="choiceText1">Reject the factory to protect residents</span>
+            <span class="choice-hints" id="choiceHints1"></span>
+          </div>
+          <span class="choice-arrow">▶</span>
+        </button>
+
+        <button class="choice-btn choice-btn--tertiary" id="choice2">
+          <span class="choice-letter">C</span>
+          <div class="choice-main">
+            <span class="choice-text" id="choiceText2">Approve with strict environmental rules</span>
+            <span class="choice-hints" id="choiceHints2"></span>
+          </div>
+          <span class="choice-arrow">▶</span>
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- RIGHT: CITY RECORD -->
+    <aside class="log-panel">
+      <div class="log-title">CITY RECORD</div>
+      <div class="log-entries" id="logEntries">
+        <div class="log-entry log-entry--placeholder">
+          <span class="log-month">—</span>
+          <span class="log-text">Your decisions will appear here...</span>
+        </div>
+      </div>
+      <div class="log-footer">
+        <div class="score-display">
+          <div class="score-label">OVERALL SCORE</div>
+          <div class="score-value" id="overallScore">300</div>
+          <div class="score-sub">out of 600</div>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN MENU SCREEN
+       Shown on first load. Hidden when Start Game is clicked.
+  ════════════════════════════════════════════ -->
+  <div class="main-menu-screen" id="mainMenuScreen">
+
+    <!-- Pixel city backdrop inside the menu -->
+    <div class="menu-backdrop"></div>
+    <div class="menu-backdrop-overlay"></div>
+
+    <div class="menu-inner">
+
+      <div class="menu-eyebrow">⚑ &nbsp;A CIVIC DECISION GAME</div>
+
+      <h1 class="menu-title">
+        Mayor<br>
+        <span class="menu-title-accent">for the</span><br>
+        Common Good
+      </h1>
+
+      <p class="menu-subtitle">
+        Lead your city through 36 months of hard decisions.<br>
+        Every choice shapes the city you leave behind.
+      </p>
+
+      <div class="menu-buttons">
+        <button class="menu-start-btn" id="menuStartBtn">
+          ▶ &nbsp;Start Game
+        </button>
+
+        <button class="menu-music-btn" id="menuMusicBtn" title="Toggle music">
+          ♪ &nbsp;Music: <span id="menuMusicLabel">ON</span>
+        </button>
+      </div>
+
+      <div class="menu-footer">
+        Press Start Game to choose your Mayor
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MAYOR SELECTION SCREEN
+       Shown before the game begins.
+       Hidden by JS once a mayor is chosen.
+  ════════════════════════════════════════════ -->
+  <div class="selection-screen" id="selectionScreen">
+
+    <div class="selection-inner">
+
+      <!-- Title block -->
+      <div class="selection-header">
+        <div class="selection-eyebrow">⚑ &nbsp;MAYOR FOR THE COMMON GOOD</div>
+        <h1 class="selection-title">Choose Your Mayor</h1>
+        <p class="selection-subtitle">Your background shapes the city's starting strengths. Choose wisely.</p>
+      </div>
+
+      <!-- 4 × 2 mayor grid -->
+      <div class="mayor-grid" id="mayorGrid">
+        <!-- Cards injected by game.js -->
+      </div>
+
+      <!-- Hover detail strip -->
+      <div class="selection-detail" id="selectionDetail">
+        <div class="detail-name" id="detailName">Hover a mayor to preview their stats</div>
+        <div class="detail-stats" id="detailStats"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       GAME OVER SCREEN
+  ════════════════════════════════════════════ -->
+  <div class="gameover-screen" id="gameoverScreen">
+    <div class="gameover-inner">
+      <div class="gameover-icon" id="gameoverIcon">💀</div>
+      <div class="gameover-eyebrow">YOUR TERM HAS ENDED</div>
+      <h2 class="gameover-title">The City Has Fallen</h2>
+      <p class="gameover-reason" id="gameoverReason">The city's economy has collapsed.</p>
+      <div class="gameover-stats" id="gameoverStats"></div>
+      <div class="gameover-months">You served <span id="gameoverMonths">0</span> months of your 36-month term.</div>
+      <button class="gameover-restart-btn" id="gameoverRestartBtn">↩ &nbsp;Try Again</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MID-GAME REPORT OVERLAY
+       Shown at months 12, 24 and 26.
+  ════════════════════════════════════════════ -->
+  <div class="midgame-screen" id="midgameScreen">
+    <div class="midgame-inner">
+      <div class="midgame-eyebrow" id="midgameEyebrow">MID-TERM REPORT</div>
+      <div class="midgame-icon" id="midgameIcon">📋</div>
+      <h2 class="midgame-title" id="midgameTitle">Year One Complete</h2>
+      <p class="midgame-headline" id="midgameHeadline">The city is holding steady.</p>
+      <p class="midgame-desc" id="midgameDesc">Progress has been made but challenges remain.</p>
+      <div class="midgame-hints-section">
+        <div class="midgame-hints-eyebrow">⚑ What lies ahead</div>
+        <div class="midgame-hints" id="midgameHints"></div>
+      </div>
+      <div class="midgame-stats" id="midgameStats"></div>
+      <div class="midgame-overall">
+        Overall Score: <span class="midgame-score-val" id="midgameScore">—</span>
+      </div>
+      <button class="midgame-continue-btn" id="midgameContinueBtn">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ELECTION / ENDGAME SCREEN
+       Shown when the player completes 36 months.
+  ════════════════════════════════════════════ -->
+  <div class="election-screen" id="electionScreen">
+    <div class="election-inner">
+
+      <div class="election-eyebrow">TERM COMPLETE — MONTH 36 OF 36</div>
+      <div class="election-icon" id="electionIcon">🗳</div>
+      <h2 class="election-title" id="electionTitle">Reelection Result</h2>
+      <div class="election-verdict" id="electionVerdict">
+        <span class="verdict-label" id="verdictLabel">Landslide Reelection</span>
+      </div>
+      <p class="election-desc" id="electionDesc">The city has spoken.</p>
+      <p class="election-epilogue" id="electionEpilogue"></p>
+
+      <div class="election-score-breakdown" id="electionBreakdown">
+        <div class="breakdown-item">
+          <span class="breakdown-label">City Health</span>
+          <span class="breakdown-value" id="breakdownStats">—</span>
+        </div>
+        <div class="breakdown-sep">+</div>
+        <div class="breakdown-item">
+          <span class="breakdown-label">Approval</span>
+          <span class="breakdown-value" id="breakdownApproval">—</span>
+        </div>
+        <div class="breakdown-sep">=</div>
+        <div class="breakdown-item breakdown-item--total">
+          <span class="breakdown-label">Final Score</span>
+          <span class="breakdown-value" id="electionAvg">—</span>
+        </div>
+      </div>
+
+      <div class="election-stats" id="electionStats"></div>
+
+      <!-- High Score Table -->
+      <div class="highscore-panel">
+        <div class="highscore-title">🏅 &nbsp;HIGH SCORES</div>
+        <div class="highscore-list" id="highscoreList"></div>
+      </div>
+
+      <button class="election-play-btn" id="electionPlayBtn">↩ &nbsp;Play Again</button>
+    </div>
+  </div>
+
+  <!-- NOTIFICATION TOAST -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">★</span>
+    <span class="toast-text" id="toastText">Decision made!</span>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
