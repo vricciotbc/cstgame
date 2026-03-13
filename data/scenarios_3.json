@@ -1,0 +1,305 @@
+{
+ "scenarios":[
+
+{
+"id":51,
+"title":"Senior Transportation Program",
+"principle":"Human Dignity",
+"situation":"Community advocates propose a transportation service for seniors who can no longer drive.",
+"choices":[
+{"text":"Fund the program","faith":4,"economy":-3,"people":4,"environment":1,"justice":4,"infrastructure":3},
+{"text":"Reject the proposal","faith":-4,"economy":2,"people":-3,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Create a limited service","faith":2,"economy":-1,"people":2,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":52,
+"title":"River Cleanup Initiative",
+"principle":"Stewardship of Creation",
+"situation":"Environmental groups ask the city to fund a large river cleanup project.",
+"choices":[
+{"text":"Fund the full cleanup","faith":3,"economy":-4,"people":3,"environment":7,"justice":2,"infrastructure":1},
+{"text":"Reject the project","faith":-2,"economy":2,"people":-2,"environment":-6,"justice":-2,"infrastructure":0},
+{"text":"Start a smaller cleanup","faith":2,"economy":-1,"people":2,"environment":3,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":53,
+"title":"Refugee Job Training",
+"principle":"Global Solidarity",
+"situation":"Charities propose job training programs to help refugees integrate into the workforce.",
+"choices":[
+{"text":"Fund the program","faith":4,"economy":1,"people":3,"environment":0,"justice":4,"infrastructure":1},
+{"text":"Reject funding","faith":-4,"economy":1,"people":-3,"environment":0,"justice":-4,"infrastructure":0},
+{"text":"Provide limited support","faith":2,"economy":0,"people":1,"environment":0,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":54,
+"title":"Public Housing Renovation",
+"principle":"Option for the Poor and Vulnerable",
+"situation":"Public housing buildings are aging and require costly renovations.",
+"choices":[
+{"text":"Fund full renovations","faith":5,"economy":-5,"people":3,"environment":1,"justice":5,"infrastructure":5},
+{"text":"Delay renovations","faith":-4,"economy":2,"people":-3,"environment":0,"justice":-4,"infrastructure":-3},
+{"text":"Renovate gradually","faith":3,"economy":-2,"people":2,"environment":0,"justice":3,"infrastructure":2}
+]
+},
+
+{
+"id":55,
+"title":"City Compost Program",
+"principle":"Stewardship of Creation",
+"situation":"A proposal would introduce compost collection across the city.",
+"choices":[
+{"text":"Implement citywide composting","faith":2,"economy":-2,"people":2,"environment":6,"justice":1,"infrastructure":3},
+{"text":"Reject the program","faith":-1,"economy":1,"people":-2,"environment":-4,"justice":0,"infrastructure":0},
+{"text":"Pilot program","faith":1,"economy":0,"people":1,"environment":2,"justice":0,"infrastructure":1}
+]
+},
+
+{
+"id":56,
+"title":"Worker Overtime Rules",
+"principle":"Dignity of Work and Rights of Workers",
+"situation":"Labour groups push for stronger overtime protections.",
+"choices":[
+{"text":"Adopt new protections","faith":3,"economy":-3,"people":2,"environment":0,"justice":5,"infrastructure":0},
+{"text":"Reject changes","faith":-3,"economy":3,"people":-1,"environment":0,"justice":-4,"infrastructure":0},
+{"text":"Adopt moderate protections","faith":2,"economy":1,"people":1,"environment":0,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":57,
+"title":"Neighbourhood Watch Program",
+"principle":"Promotion of Peace",
+"situation":"Residents propose organizing neighbourhood watch groups.",
+"choices":[
+{"text":"Support the program","faith":2,"economy":-1,"people":3,"environment":0,"justice":3,"infrastructure":1},
+{"text":"Reject the proposal","faith":-1,"economy":1,"people":-2,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Test in select neighbourhoods","faith":1,"economy":0,"people":1,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":58,
+"title":"Immigrant Cultural Festival",
+"principle":"Participation in Society",
+"situation":"Community leaders propose a festival celebrating immigrant cultures.",
+"choices":[
+{"text":"Fund the festival","faith":2,"economy":2,"people":4,"environment":0,"justice":3,"infrastructure":1},
+{"text":"Reject funding","faith":-1,"economy":0,"people":-3,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Fund a smaller festival","faith":1,"economy":1,"people":2,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":59,
+"title":"Subsidized School Meals",
+"principle":"Option for the Poor and Vulnerable",
+"situation":"Educators propose subsidized meals for students from low-income families.",
+"choices":[
+{"text":"Fund the program","faith":5,"economy":-3,"people":4,"environment":0,"justice":5,"infrastructure":2},
+{"text":"Reject funding","faith":-5,"economy":2,"people":-3,"environment":0,"justice":-5,"infrastructure":0},
+{"text":"Provide limited funding","faith":2,"economy":-1,"people":2,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":60,
+"title":"Green Roof Requirement",
+"principle":"Stewardship of Creation",
+"situation":"Developers may be required to include green roofs on new buildings.",
+"choices":[
+{"text":"Require green roofs","faith":2,"economy":-3,"people":2,"environment":6,"justice":1,"infrastructure":1},
+{"text":"Reject the proposal","faith":-1,"economy":2,"people":-1,"environment":-5,"justice":0,"infrastructure":0},
+{"text":"Encourage but not require","faith":1,"economy":0,"people":1,"environment":2,"justice":0,"infrastructure":0}
+]
+},
+
+{
+"id":61,
+"title":"Accessible Sidewalks Program",
+"principle":"Human Dignity",
+"situation":"Disability advocates push for accessible sidewalks citywide.",
+"choices":[
+{"text":"Fund accessibility upgrades","faith":4,"economy":-4,"people":3,"environment":0,"justice":5,"infrastructure":5},
+{"text":"Reject the plan","faith":-4,"economy":2,"people":-3,"environment":0,"justice":-4,"infrastructure":-2},
+{"text":"Upgrade gradually","faith":2,"economy":-1,"people":2,"environment":0,"justice":3,"infrastructure":2}
+]
+},
+
+{
+"id":62,
+"title":"Youth Job Program",
+"principle":"Dignity of Work and Rights of Workers",
+"situation":"A program could help teenagers find summer jobs.",
+"choices":[
+{"text":"Fund the program","faith":2,"economy":2,"people":3,"environment":0,"justice":3,"infrastructure":1},
+{"text":"Reject funding","faith":-1,"economy":-1,"people":-2,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Launch a pilot program","faith":1,"economy":1,"people":1,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":63,
+"title":"Urban Wildlife Protection",
+"principle":"Stewardship of Creation",
+"situation":"Conservationists ask the city to protect habitats for wildlife.",
+"choices":[
+{"text":"Protect habitats","faith":2,"economy":-2,"people":2,"environment":6,"justice":1,"infrastructure":0},
+{"text":"Allow development","faith":-1,"economy":3,"people":-1,"environment":-5,"justice":-1,"infrastructure":1},
+{"text":"Protect some areas","faith":1,"economy":1,"people":1,"environment":2,"justice":0,"infrastructure":0}
+]
+},
+
+{
+"id":64,
+"title":"City Mediation Service",
+"principle":"Promotion of Peace",
+"situation":"The city could fund mediation services to resolve disputes.",
+"choices":[
+{"text":"Fund the service","faith":3,"economy":-1,"people":3,"environment":0,"justice":4,"infrastructure":1},
+{"text":"Reject funding","faith":-2,"economy":1,"people":-2,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Pilot the program","faith":1,"economy":0,"people":1,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":65,
+"title":"Affordable Internet Access",
+"principle":"Participation in Society",
+"situation":"Advocates propose subsidized internet for low-income households.",
+"choices":[
+{"text":"Subsidize internet","faith":3,"economy":-2,"people":4,"environment":0,"justice":4,"infrastructure":2},
+{"text":"Reject subsidies","faith":-2,"economy":1,"people":-3,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Limited subsidies","faith":1,"economy":0,"people":2,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":66,
+"title":"City Peace Conference",
+"principle":"Promotion of Peace",
+"situation":"Faith leaders propose a conference promoting peace and dialogue.",
+"choices":[
+{"text":"Fund the conference","faith":4,"economy":-1,"people":3,"environment":0,"justice":3,"infrastructure":1},
+{"text":"Reject funding","faith":-3,"economy":0,"people":-2,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Support through partnerships","faith":2,"economy":0,"people":1,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":67,
+"title":"Flood Barrier Project",
+"principle":"Role of Government",
+"situation":"Engineers propose building barriers to protect against future flooding.",
+"choices":[
+{"text":"Build the barriers","faith":2,"economy":-5,"people":3,"environment":2,"justice":2,"infrastructure":6},
+{"text":"Reject the project","faith":-1,"economy":2,"people":-3,"environment":-2,"justice":-1,"infrastructure":-4},
+{"text":"Build smaller barriers","faith":1,"economy":-2,"people":1,"environment":1,"justice":1,"infrastructure":3}
+]
+},
+
+{
+"id":68,
+"title":"Community Health Campaign",
+"principle":"Human Dignity",
+"situation":"Health officials propose a campaign promoting healthier lifestyles.",
+"choices":[
+{"text":"Fund the campaign","faith":3,"economy":-2,"people":4,"environment":0,"justice":3,"infrastructure":1},
+{"text":"Reject the campaign","faith":-2,"economy":1,"people":-2,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Run a smaller campaign","faith":1,"economy":0,"people":2,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":69,
+"title":"Public Transit Safety",
+"principle":"Promotion of Peace",
+"situation":"Officials propose additional safety measures on public transit.",
+"choices":[
+{"text":"Increase safety funding","faith":1,"economy":-2,"people":3,"environment":0,"justice":2,"infrastructure":2},
+{"text":"Reject the proposal","faith":-1,"economy":1,"people":-2,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Increase security gradually","faith":1,"economy":0,"people":1,"environment":0,"justice":1,"infrastructure":1}
+]
+},
+
+{
+"id":70,
+"title":"City Tree Protection Law",
+"principle":"Stewardship of Creation",
+"situation":"Environmentalists want stronger protections for city trees.",
+"choices":[
+{"text":"Pass the law","faith":2,"economy":-2,"people":2,"environment":6,"justice":1,"infrastructure":0},
+{"text":"Reject the law","faith":-1,"economy":2,"people":-1,"environment":-5,"justice":-1,"infrastructure":0},
+{"text":"Create moderate protections","faith":1,"economy":0,"people":1,"environment":2,"justice":0,"infrastructure":0}
+]
+},
+
+{
+"id":71,
+"title":"Worker Cooperative Grants",
+"principle":"Dignity of Work and Rights of Workers",
+"situation":"Workers want grants to start employee-owned cooperatives.",
+"choices":[
+{"text":"Provide grants","faith":3,"economy":1,"people":3,"environment":0,"justice":4,"infrastructure":1},
+{"text":"Reject grants","faith":-2,"economy":0,"people":-2,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Provide smaller grants","faith":1,"economy":1,"people":1,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":72,
+"title":"Urban Air Quality Monitoring",
+"principle":"Stewardship of Creation",
+"situation":"Scientists want air quality monitoring stations across the city.",
+"choices":[
+{"text":"Fund monitoring stations","faith":2,"economy":-2,"people":2,"environment":5,"justice":1,"infrastructure":2},
+{"text":"Reject the proposal","faith":-1,"economy":1,"people":-1,"environment":-3,"justice":0,"infrastructure":0},
+{"text":"Install limited stations","faith":1,"economy":0,"people":1,"environment":2,"justice":0,"infrastructure":1}
+]
+},
+
+{
+"id":73,
+"title":"Neighbourhood Community Centers",
+"principle":"Community and the Common Good",
+"situation":"Residents want more community centers for social activities.",
+"choices":[
+{"text":"Build new centers","faith":2,"economy":-4,"people":4,"environment":0,"justice":2,"infrastructure":5},
+{"text":"Reject the proposal","faith":-1,"economy":2,"people":-3,"environment":0,"justice":-1,"infrastructure":-2},
+{"text":"Renovate existing centers","faith":1,"economy":-1,"people":2,"environment":0,"justice":1,"infrastructure":2}
+]
+},
+
+{
+"id":74,
+"title":"Fair Housing Enforcement",
+"principle":"Rights and Responsibilities",
+"situation":"Investigations reveal discrimination in housing rentals.",
+"choices":[
+{"text":"Increase enforcement","faith":3,"economy":-1,"people":2,"environment":0,"justice":5,"infrastructure":0},
+{"text":"Ignore the issue","faith":-4,"economy":0,"people":-3,"environment":0,"justice":-5,"infrastructure":0},
+{"text":"Create a review committee","faith":2,"economy":0,"people":1,"environment":0,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":75,
+"title":"Community Volunteer Program",
+"principle":"Participation in Society",
+"situation":"Leaders propose a volunteer initiative to support community services.",
+"choices":[
+{"text":"Launch the program","faith":3,"economy":-1,"people":4,"environment":0,"justice":2,"infrastructure":1},
+{"text":"Reject the idea","faith":-1,"economy":1,"people":-3,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Pilot the program","faith":1,"economy":0,"people":2,"environment":0,"justice":1,"infrastructure":0}
+]
+}
+
+]
+}

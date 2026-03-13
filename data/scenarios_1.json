@@ -1,0 +1,305 @@
+{
+ "scenarios":[
+
+{
+"id":1,
+"title":"Factory Expansion Proposal",
+"principle":"Dignity of Work and Rights of Workers",
+"situation":"A manufacturing company proposes building a new factory that would create hundreds of jobs but increase pollution near a working-class neighbourhood.",
+"choices":[
+{"text":"Approve the factory to create jobs","faith":-1,"economy":8,"people":4,"environment":-7,"justice":-3,"infrastructure":2},
+{"text":"Reject the factory to protect residents","faith":3,"economy":-6,"people":-2,"environment":7,"justice":4,"infrastructure":0},
+{"text":"Approve with strict environmental rules","faith":4,"economy":3,"people":2,"environment":3,"justice":2,"infrastructure":-1}
+]
+},
+
+{
+"id":2,
+"title":"Refugee Resettlement Request",
+"principle":"Global Solidarity",
+"situation":"The federal government asks your city to welcome 200 refugees fleeing war. Some residents support the plan while others worry about costs.",
+"choices":[
+{"text":"Welcome the refugees","faith":7,"economy":-3,"people":-2,"environment":0,"justice":5,"infrastructure":-3},
+{"text":"Refuse the request","faith":-6,"economy":2,"people":2,"environment":0,"justice":-5,"infrastructure":1},
+{"text":"Accept refugees with federal funding","faith":5,"economy":-1,"people":1,"environment":0,"justice":4,"infrastructure":-1}
+]
+},
+
+{
+"id":3,
+"title":"Homeless Shelter Funding",
+"principle":"Option for the Poor and Vulnerable",
+"situation":"A charity asks the city to help fund a new homeless shelter downtown. Business leaders worry it may discourage tourism.",
+"choices":[
+{"text":"Fully fund the shelter","faith":6,"economy":-4,"people":2,"environment":0,"justice":5,"infrastructure":2},
+{"text":"Reject funding","faith":-6,"economy":4,"people":-3,"environment":0,"justice":-5,"infrastructure":0},
+{"text":"Fund a smaller shelter","faith":4,"economy":-2,"people":1,"environment":0,"justice":3,"infrastructure":1}
+]
+},
+
+{
+"id":4,
+"title":"Minimum Wage Debate",
+"principle":"Dignity of Work and Rights of Workers",
+"situation":"Worker groups demand the city support raising the local minimum wage. Small businesses warn it could lead to layoffs.",
+"choices":[
+{"text":"Support a wage increase","faith":3,"economy":-4,"people":3,"environment":0,"justice":5,"infrastructure":0},
+{"text":"Oppose the increase","faith":-3,"economy":5,"people":-2,"environment":0,"justice":-5,"infrastructure":0},
+{"text":"Gradually raise wages","faith":2,"economy":2,"people":2,"environment":0,"justice":3,"infrastructure":0}
+]
+},
+
+{
+"id":5,
+"title":"Police Budget Increase",
+"principle":"Promotion of Peace",
+"situation":"Police leaders request a larger budget to respond to rising crime. Community groups want investment in social programs instead.",
+"choices":[
+{"text":"Increase police funding","faith":0,"economy":-2,"people":3,"environment":0,"justice":1,"infrastructure":-2},
+{"text":"Fund social programs instead","faith":2,"economy":-3,"people":2,"environment":0,"justice":4,"infrastructure":1},
+{"text":"Split the funding","faith":1,"economy":-2,"people":2,"environment":0,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":6,
+"title":"Public Transit Expansion",
+"principle":"Community and the Common Good",
+"situation":"Your city considers expanding public transit to underserved neighbourhoods. The project would improve mobility but cost millions.",
+"choices":[
+{"text":"Build the full expansion","faith":2,"economy":-5,"people":4,"environment":3,"justice":2,"infrastructure":7},
+{"text":"Cancel the project","faith":-1,"economy":3,"people":-2,"environment":-2,"justice":-1,"infrastructure":-5},
+{"text":"Build a smaller version","faith":1,"economy":-2,"people":2,"environment":1,"justice":1,"infrastructure":3}
+]
+},
+
+{
+"id":7,
+"title":"Worker Strike",
+"principle":"Dignity of Work and Rights of Workers",
+"situation":"City sanitation workers go on strike demanding better pay and safer conditions. Garbage is piling up across the city.",
+"choices":[
+{"text":"Support the workers","faith":3,"economy":-3,"people":-2,"environment":-1,"justice":5,"infrastructure":0},
+{"text":"Force them back to work","faith":-2,"economy":3,"people":2,"environment":0,"justice":-5,"infrastructure":1},
+{"text":"Negotiate a compromise","faith":2,"economy":1,"people":2,"environment":0,"justice":3,"infrastructure":0}
+]
+},
+
+{
+"id":8,
+"title":"Park vs Housing Development",
+"principle":"Stewardship of Creation",
+"situation":"Developers want to build housing on a large green space. The project would ease the housing shortage but remove a major park.",
+"choices":[
+{"text":"Approve development","faith":-1,"economy":4,"people":1,"environment":-7,"justice":0,"infrastructure":5},
+{"text":"Protect the park","faith":3,"economy":-3,"people":3,"environment":7,"justice":1,"infrastructure":0},
+{"text":"Allow partial development","faith":1,"economy":2,"people":2,"environment":2,"justice":0,"infrastructure":3}
+]
+},
+
+{
+"id":9,
+"title":"Youth Advisory Council",
+"principle":"Participation in Society",
+"situation":"Students ask the city to create a youth advisory council so young people can help influence policy.",
+"choices":[
+{"text":"Create the council","faith":2,"economy":-1,"people":4,"environment":0,"justice":3,"infrastructure":1},
+{"text":"Reject the idea","faith":-1,"economy":0,"people":-3,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Create a small pilot program","faith":1,"economy":0,"people":2,"environment":0,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":10,
+"title":"Military Equipment Donation",
+"principle":"Promotion of Peace",
+"situation":"The federal government offers surplus military equipment to local police forces.",
+"choices":[
+{"text":"Accept the equipment","faith":-1,"economy":0,"people":2,"environment":0,"justice":-3,"infrastructure":2},
+{"text":"Reject the equipment","faith":1,"economy":0,"people":-1,"environment":0,"justice":3,"infrastructure":0},
+{"text":"Accept with strict oversight","faith":1,"economy":0,"people":1,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":11,
+"title":"Affordable Housing Project",
+"principle":"Option for the Poor and Vulnerable",
+"situation":"A proposal would build affordable housing for low-income families but requires higher city spending.",
+"choices":[
+{"text":"Fund the housing project","faith":5,"economy":-4,"people":3,"environment":0,"justice":5,"infrastructure":4},
+{"text":"Reject the project","faith":-5,"economy":3,"people":-2,"environment":0,"justice":-4,"infrastructure":0},
+{"text":"Build fewer units","faith":2,"economy":-2,"people":1,"environment":0,"justice":2,"infrastructure":2}
+]
+},
+
+{
+"id":12,
+"title":"Community Garden Initiative",
+"principle":"Stewardship of Creation",
+"situation":"Residents propose turning unused land into community gardens.",
+"choices":[
+{"text":"Support the gardens","faith":2,"economy":-1,"people":3,"environment":5,"justice":1,"infrastructure":1},
+{"text":"Sell land to developers","faith":-1,"economy":4,"people":0,"environment":-4,"justice":0,"infrastructure":2},
+{"text":"Divide the land between both","faith":1,"economy":2,"people":2,"environment":1,"justice":0,"infrastructure":1}
+]
+},
+
+{
+"id":13,
+"title":"Local Business Tax Break",
+"principle":"Role of Government",
+"situation":"Business leaders ask for tax breaks to encourage investment in the city.",
+"choices":[
+{"text":"Grant tax breaks","faith":-1,"economy":6,"people":1,"environment":0,"justice":-2,"infrastructure":-2},
+{"text":"Reject the request","faith":1,"economy":-3,"people":-1,"environment":0,"justice":2,"infrastructure":1},
+{"text":"Offer limited incentives","faith":1,"economy":3,"people":1,"environment":0,"justice":1,"infrastructure":-1}
+]
+},
+
+{
+"id":14,
+"title":"School Funding Debate",
+"principle":"Rights and Responsibilities",
+"situation":"Teachers request increased school funding for overcrowded classrooms.",
+"choices":[
+{"text":"Increase school funding","faith":3,"economy":-3,"people":4,"environment":0,"justice":4,"infrastructure":3},
+{"text":"Maintain current funding","faith":-1,"economy":1,"people":-2,"environment":0,"justice":-2,"infrastructure":0},
+{"text":"Provide partial funding","faith":1,"economy":-1,"people":2,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":15,
+"title":"Public Health Clinic",
+"principle":"Human Dignity",
+"situation":"Health advocates propose opening a free clinic for low-income residents.",
+"choices":[
+{"text":"Open the clinic","faith":4,"economy":-3,"people":4,"environment":0,"justice":4,"infrastructure":3},
+{"text":"Reject the plan","faith":-4,"economy":2,"people":-3,"environment":0,"justice":-4,"infrastructure":0},
+{"text":"Partner with charities","faith":3,"economy":-1,"people":2,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":16,
+"title":"Water Pollution Crisis",
+"principle":"Stewardship of Creation",
+"situation":"Tests show a nearby factory may be polluting the city's river.",
+"choices":[
+{"text":"Fine the factory heavily","faith":2,"economy":-3,"people":2,"environment":6,"justice":3,"infrastructure":0},
+{"text":"Ignore the issue","faith":-4,"economy":2,"people":-2,"environment":-6,"justice":-4,"infrastructure":0},
+{"text":"Negotiate cleanup plan","faith":2,"economy":0,"people":2,"environment":3,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":17,
+"title":"Immigrant Support Services",
+"principle":"Global Solidarity",
+"situation":"Community groups ask the city to fund language and job training programs for immigrants.",
+"choices":[
+{"text":"Fund the programs","faith":4,"economy":-2,"people":3,"environment":0,"justice":4,"infrastructure":2},
+{"text":"Reject funding","faith":-3,"economy":1,"people":-2,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Offer limited funding","faith":2,"economy":-1,"people":1,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":18,
+"title":"Public Protest Permit",
+"principle":"Participation in Society",
+"situation":"Activists request permission to hold a large protest downtown.",
+"choices":[
+{"text":"Approve the protest","faith":1,"economy":-1,"people":2,"environment":0,"justice":4,"infrastructure":0},
+{"text":"Deny the permit","faith":-1,"economy":1,"people":-3,"environment":0,"justice":-4,"infrastructure":0},
+{"text":"Approve with restrictions","faith":1,"economy":0,"people":1,"environment":0,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":19,
+"title":"Food Bank Funding",
+"principle":"Option for the Poor and Vulnerable",
+"situation":"Local food banks are struggling with rising demand.",
+"choices":[
+{"text":"Increase funding","faith":5,"economy":-2,"people":3,"environment":0,"justice":4,"infrastructure":1},
+{"text":"Maintain current funding","faith":-2,"economy":1,"people":-2,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Partner with charities","faith":3,"economy":0,"people":2,"environment":0,"justice":2,"infrastructure":0}
+]
+},
+
+{
+"id":20,
+"title":"Bike Lane Expansion",
+"principle":"Stewardship of Creation",
+"situation":"Cycling groups want the city to expand bike lanes across downtown.",
+"choices":[
+{"text":"Build extensive bike lanes","faith":2,"economy":-2,"people":3,"environment":5,"justice":1,"infrastructure":4},
+{"text":"Reject the proposal","faith":-1,"economy":1,"people":-2,"environment":-3,"justice":0,"infrastructure":0},
+{"text":"Build limited lanes","faith":1,"economy":-1,"people":2,"environment":2,"justice":0,"infrastructure":2}
+]
+},
+
+{
+"id":21,
+"title":"Industrial Waste Regulation",
+"principle":"Stewardship of Creation",
+"situation":"New regulations could reduce industrial waste but businesses say costs will rise.",
+"choices":[
+{"text":"Pass strict regulations","faith":3,"economy":-4,"people":2,"environment":6,"justice":3,"infrastructure":0},
+{"text":"Reject the regulations","faith":-2,"economy":4,"people":-1,"environment":-5,"justice":-2,"infrastructure":0},
+{"text":"Introduce gradual rules","faith":2,"economy":1,"people":1,"environment":2,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":22,
+"title":"Public Library Expansion",
+"principle":"Community and the Common Good",
+"situation":"Residents want to expand the public library system.",
+"choices":[
+{"text":"Build new libraries","faith":2,"economy":-3,"people":4,"environment":0,"justice":3,"infrastructure":4},
+{"text":"Reject expansion","faith":-1,"economy":1,"people":-3,"environment":0,"justice":-2,"infrastructure":-2},
+{"text":"Renovate existing libraries","faith":1,"economy":-1,"people":2,"environment":0,"justice":2,"infrastructure":2}
+]
+},
+
+{
+"id":23,
+"title":"Senior Care Funding",
+"principle":"Human Dignity",
+"situation":"Advocates say senior care homes need additional city funding.",
+"choices":[
+{"text":"Increase funding","faith":4,"economy":-3,"people":3,"environment":0,"justice":4,"infrastructure":3},
+{"text":"Reject the request","faith":-4,"economy":2,"people":-2,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Provide partial funding","faith":2,"economy":-1,"people":2,"environment":0,"justice":2,"infrastructure":1}
+]
+},
+
+{
+"id":24,
+"title":"International Sister City Program",
+"principle":"Global Solidarity",
+"situation":"Your city is invited to form a partnership with a city in a developing country.",
+"choices":[
+{"text":"Join the partnership","faith":3,"economy":-1,"people":2,"environment":0,"justice":2,"infrastructure":1},
+{"text":"Decline the offer","faith":-2,"economy":1,"people":-1,"environment":0,"justice":-1,"infrastructure":0},
+{"text":"Join with limited commitments","faith":2,"economy":0,"people":1,"environment":0,"justice":1,"infrastructure":0}
+]
+},
+
+{
+"id":25,
+"title":"Community Mediation Program",
+"principle":"Promotion of Peace",
+"situation":"Community leaders propose mediation programs to resolve neighbourhood conflicts.",
+"choices":[
+{"text":"Fund the program","faith":3,"economy":-1,"people":4,"environment":0,"justice":4,"infrastructure":1},
+{"text":"Reject the proposal","faith":-2,"economy":1,"people":-2,"environment":0,"justice":-3,"infrastructure":0},
+{"text":"Launch a pilot program","faith":2,"economy":0,"people":2,"environment":0,"justice":2,"infrastructure":0}
+]
+}
+
+]
+}
