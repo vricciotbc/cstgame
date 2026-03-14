@@ -354,6 +354,18 @@ html, body {
   letter-spacing: 0.2px;
 }
 
+.trait-badge--bonus {
+  color: #4ade80;
+  border-color: rgba(74,222,128,0.25);
+  background: rgba(74,222,128,0.08);
+}
+
+.trait-badge--penalty {
+  color: #f87171;
+  border-color: rgba(248,113,113,0.25);
+  background: rgba(248,113,113,0.08);
+}
+
 .trait-icon {
   font-size: 7px;
   flex-shrink: 0;
@@ -408,6 +420,17 @@ html, body {
   transition: opacity 0.5s ease;
 }
 
+@keyframes cityFlash {
+  0%   { box-shadow: inset 0 0 0 3px rgba(245,200,66,0); }
+  25%  { box-shadow: inset 0 0 0 3px rgba(245,200,66,0.7); }
+  75%  { box-shadow: inset 0 0 0 3px rgba(245,200,66,0.4); }
+  100% { box-shadow: inset 0 0 0 3px rgba(245,200,66,0); }
+}
+
+.city-view-panel.city-flash {
+  animation: cityFlash 1.2s ease forwards;
+}
+
 /* Subtle vignette over the city image */
 .city-view-panel::after {
   content: '';
@@ -424,7 +447,50 @@ html, body {
   border-radius: var(--radius-lg);
 }
 
-/* ---- CHOICES AREA (standalone, below city view) ---- */
+/* City change banner — overlaid on the cityscape image */
+.city-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: linear-gradient(0deg, rgba(5,8,20,0.92) 0%, rgba(5,8,20,0.7) 70%, transparent 100%);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 10;
+}
+
+.city-banner--show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.city-banner--hide {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.city-banner-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.city-banner-text {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--clr-cream);
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
 .choices-area {
   display: flex;
   flex-direction: column;
@@ -475,6 +541,17 @@ html, body {
   color: var(--clr-gold);
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+.principle-definition {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  color: var(--clr-muted);
+  line-height: 1.5;
+  font-style: italic;
+  border-left: 2px solid rgba(245,200,66,0.25);
+  padding-left: 8px;
+  margin: 0;
 }
 
 .scenario-title {
@@ -775,6 +852,12 @@ html, body {
   background: rgba(0,0,0,0.2);
   white-space: nowrap;
   letter-spacing: 0.2px;
+}
+
+.log-chip--bonus {
+  color: #fbbf24;
+  border-color: rgba(251,191,36,0.4);
+  background: rgba(251,191,36,0.1);
 }
 
 /* ---- LOG FOOTER / SCORE ---- */
@@ -1963,6 +2046,137 @@ html, body {
 .reelection-verdict.reelect-very-unlikely { color: #f87171; }
 
 /* ---- MID-GAME REPORT OVERLAY ---- */
+/* ════════════════════════════════════════════
+   INSTRUCTION SCREEN
+   ════════════════════════════════════════════ */
+.instruction-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 320;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 20, 0.96);
+  backdrop-filter: blur(8px);
+}
+
+.instruction-screen.visible {
+  display: flex;
+  animation: gameoverFadeIn 0.4s ease forwards;
+}
+
+.instruction-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 680px;
+  width: 94%;
+  padding: 30px 30px 26px;
+  background: rgba(14, 20, 38, 0.98);
+  border: 1px solid rgba(245,200,66,0.3);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 60px rgba(245,200,66,0.08), var(--shadow-panel);
+  animation: gameoverSlideUp 0.4s cubic-bezier(0.175,0.885,0.32,1.275) 0.05s both;
+  max-height: 92vh;
+  overflow-y: auto;
+}
+
+.instruction-eyebrow {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--clr-gold);
+  letter-spacing: 3px;
+}
+
+.instruction-title {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--clr-cream);
+  line-height: 1.6;
+  text-shadow: 0 0 20px rgba(245,200,66,0.2);
+  text-align: center;
+}
+
+.instruction-handshake {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(245,200,66,0.2);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  image-rendering: pixelated;
+  display: block;
+}
+
+.instruction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.instruction-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(245,200,66,0.1);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.instruction-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.instruction-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.instruction-heading {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--clr-cream);
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.instruction-text {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--clr-muted);
+  line-height: 1.5;
+}
+
+.instruction-btn {
+  margin-top: 4px;
+  padding: 13px 36px;
+  background: var(--clr-gold);
+  color: #0a0c19;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 16px rgba(245,200,66,0.3);
+}
+
+.instruction-btn:hover {
+  background: #ffe066;
+  transform: scale(1.04);
+  box-shadow: 0 6px 24px rgba(245,200,66,0.45);
+}
+
+/* ════════════════════════════════════════════
+   MID-GAME REPORT OVERLAY
+   ════════════════════════════════════════════ */
 .midgame-screen {
   position: fixed;
   inset: 0;
@@ -2187,18 +2401,132 @@ html, body {
 }
 
 /* ---- RESPONSIVE: Chromebook 1366x768 ---- */
+/* ════════════════════════════════════════════
+   RESPONSIVE — 1366px wide screens
+   ════════════════════════════════════════════ */
 @media (max-width: 1366px) {
-  .game-title h1 { font-size: 9px; }
-  .scenario-title { font-size: 11px; }
-  .scenario-desc { font-size: 12.5px; }
-  .choice-text { font-size: 11.5px; }
-  .game-main { grid-template-columns: 200px 1fr 185px; }
+  .game-title h1        { font-size: 9px; }
+  .game-main            { grid-template-columns: 200px 1fr 185px; }
+  .scenario-title       { font-size: 11px; }
+  .scenario-desc        { font-size: 12px; }
+  .choice-text          { font-size: 11.5px; }
 }
 
-@media (max-height: 768px) {
-  .game-header { padding: 4px 16px; }
-  .stat-item { margin-bottom: 4px; }
-  .advisor-portrait { width: 60px; height: 60px; }
-  .choice-btn { padding: 9px 12px; }
-  .scenario-card { padding: 14px 16px; }
+/* ════════════════════════════════════════════
+   RESPONSIVE — Chromebook 1280×800
+   Full layout pass: tighter columns, smaller
+   type, compressed panels, no clipping.
+   ════════════════════════════════════════════ */
+@media (max-width: 1280px) {
+
+  /* ── Header ── */
+  .game-header          { padding: 4px 10px; }
+  .game-title h1        { font-size: 8px; }
+  .month-badge          { font-size: 9px; padding: 4px 10px; }
+
+  /* ── Main 3-column grid ── */
+  .game-main {
+    grid-template-columns: 185px 1fr 175px;
+    gap: 7px;
+    padding: 7px 8px;
+    height: calc(100vh - 50px);
+  }
+
+  /* ── Shared panel ── */
+  .stat-panel, .log-panel {
+    padding: 8px 8px;
+  }
+
+  /* ── Stat bars ── */
+  .stat-panel-title     { font-size: 5.5px; letter-spacing: 2px; margin-bottom: 6px; }
+  .stat-item            { margin-bottom: 5px; }
+  .stat-label           { font-size: 7px; }
+  .stat-value           { font-size: 14px; }
+  .stat-track           { height: 6px; }
+
+  /* ── Approval / re-election bars ── */
+  .progress-label       { font-size: 5px; letter-spacing: 1px; }
+  .reelect-track,
+  .reelection-track     { height: 10px; }
+  .reelect-value        { font-size: 9px; }
+  .reelection-verdict   { font-size: 5px; }
+
+  /* ── Advisor box ── */
+  .advisor-portrait     { width: 58px; height: 58px; }
+  .advisor-name         { font-size: 5.5px; }
+  .advisor-quote        { font-size: 9px; }
+  .trait-badge          { font-size: 4.5px; padding: 3px 6px; }
+
+  /* ── Scenario card ── */
+  .scenario-card        { padding: 7px 10px; gap: 5px; }
+  #principleText        { font-size: 9px; }
+  .principle-definition { font-size: 9.5px; }
+  .scenario-title       { font-size: 9px; }
+  .scenario-desc        { font-size: 11px; }
+
+  /* ── City view — must not clip on small screens ── */
+  .city-view-panel      { min-height: 0; }
+  .city-view-img        { object-fit: cover; object-position: center; }
+  .city-banner-text     { font-size: 7px; }
+  .city-banner-icon     { font-size: 18px; }
+
+  /* ── Choice buttons ── */
+  .choice-btn           { padding: 8px 10px; gap: 8px; }
+  .choice-letter        { font-size: 11px; width: 22px; height: 22px; }
+  .choice-text          { font-size: 10.5px; }
+  .choice-hints         { font-size: 4.5px; }
+  .choice-arrow         { font-size: 8px; }
+
+  /* ── Log panel ── */
+  .log-title            { font-size: 5.5px; }
+  .log-month            { font-size: 5.5px; }
+  .log-principle        { font-size: 4.5px; }
+  .log-text             { font-size: 9px; }
+  .log-chip             { font-size: 4.5px; padding: 1px 4px; }
+  .score-value          { font-size: 32px; }
+  .score-label          { font-size: 5.5px; }
+
+  /* ── Mayor selection ── */
+  .mayor-grid           { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .mayor-card           { padding: 8px 6px; }
+  .mayor-card-name      { font-size: 5.5px; }
+  .selection-title      { font-size: 14px; }
+  .selection-subtitle   { font-size: 11px; }
+
+  /* ── Instruction screen ── */
+  .instruction-grid     { grid-template-columns: 1fr 1fr; gap: 7px; }
+  .instruction-heading  { font-size: 5.5px; }
+  .instruction-text     { font-size: 10px; }
+  .instruction-handshake { max-width: 380px; }
+
+  /* ── Overlays (midgame, election, gameover) ── */
+  .midgame-inner,
+  .election-inner,
+  .gameover-inner       { padding: 20px 18px; gap: 10px; max-width: 500px; }
+  .midgame-title,
+  .election-title       { font-size: 12px; }
+  .midgame-headline,
+  .election-desc        { font-size: 12px; }
+  .midgame-desc         { font-size: 11px; }
+  .election-epilogue    { font-size: 11px; }
+  .midgame-stat-value,
+  .gameover-stat-value  { font-size: 22px; }
+  .midgame-continue-btn,
+  .election-play-btn,
+  .gameover-restart-btn { font-size: 8px; padding: 10px 24px; }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — short viewports (height ≤ 800px)
+   Compress vertical rhythm without breaking layout
+   ════════════════════════════════════════════ */
+@media (max-height: 800px) {
+  .game-header          { padding: 4px 14px; }
+  .stat-item            { margin-bottom: 4px; }
+  .advisor-portrait     { width: 56px; height: 56px; }
+  .choice-btn           { padding: 8px 11px; }
+  .scenario-card        { padding: 6px 12px; }
+  .city-view-panel      { min-height: 0; }
+  .midgame-inner,
+  .election-inner       { max-height: 90vh; overflow-y: auto; }
 }

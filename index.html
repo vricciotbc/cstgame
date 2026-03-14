@@ -105,18 +105,8 @@
         </div>
       </div>
 
-      <!-- Term progress + approval rating -->
+      <!-- Approval + re-election bars -->
       <div class="progress-strip progress-strip--sidebar">
-
-        <div class="progress-row">
-          <div class="progress-label">TERM PROGRESS</div>
-          <div class="term-track">
-            <div class="term-fill" id="termFill" style="width: 2.7%"></div>
-            <div class="term-markers">
-              <span>0</span><span>9</span><span>18</span><span>27</span><span>36</span>
-            </div>
-          </div>
-        </div>
 
         <div class="progress-row">
           <div class="progress-label">APPROVAL RATING</div>
@@ -158,6 +148,7 @@
           <span class="principle-icon">✦</span>
           <span id="principleText">Dignity of Work and Rights of Workers</span>
         </div>
+        <p class="principle-definition" id="principleDefinition"></p>
         <h2 class="scenario-title" id="scenarioTitle">Factory Expansion Proposal</h2>
         <div class="scenario-divider"></div>
         <p class="scenario-desc" id="scenarioDesc">
@@ -170,6 +161,10 @@
         <img class="city-view-img" id="cityViewImg"
              src="backgrounds/city_normal.png"
              alt="City view" />
+        <div class="city-banner" id="cityBanner">
+          <span class="city-banner-icon" id="cityBannerIcon">🌿</span>
+          <span class="city-banner-text" id="cityBannerText">Your city has changed</span>
+        </div>
       </div>
 
       <!-- 3. Decision buttons -->
@@ -294,6 +289,76 @@
         <div class="detail-name" id="detailName">Hover a mayor to preview their stats</div>
         <div class="detail-stats" id="detailStats"></div>
       </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       INSTRUCTION SCREEN
+       Shown once after mayor selection.
+  ════════════════════════════════════════════ -->
+  <div class="instruction-screen" id="instructionScreen">
+    <div class="instruction-inner">
+
+      <div class="instruction-eyebrow">⚑ HOW TO PLAY</div>
+      <h2 class="instruction-title">Your Term Begins</h2>
+
+      <img class="instruction-handshake" id="instructionHandshake"
+           src="" alt="Handover of office" />
+
+      <div class="instruction-grid">
+
+        <div class="instruction-item">
+          <span class="instruction-icon">📋</span>
+          <div class="instruction-body">
+            <div class="instruction-heading">Read the scenario</div>
+            <div class="instruction-text">Each month a real civic issue lands on your desk. The principle shown at the top tells you which Catholic Social Teaching value is at stake.</div>
+          </div>
+        </div>
+
+        <div class="instruction-item">
+          <span class="instruction-icon">🗳</span>
+          <div class="instruction-body">
+            <div class="instruction-heading">Choose A, B or C</div>
+            <div class="instruction-text">Every choice has trade-offs. Option A is bold but costly. Option B is the refusal — it has consequences too. Option C is a compromise, but never a free ride.</div>
+          </div>
+        </div>
+
+        <div class="instruction-item">
+          <span class="instruction-icon">📊</span>
+          <div class="instruction-body">
+            <div class="instruction-heading">Watch your six stats</div>
+            <div class="instruction-text">Faith, Economy, People, Environment, Justice, and Infrastructure. If any one stat hits zero, your term ends early. Keep them all alive.</div>
+          </div>
+        </div>
+
+        <div class="instruction-item">
+          <span class="instruction-icon">📈</span>
+          <div class="instruction-body">
+            <div class="instruction-heading">Build your approval</div>
+            <div class="instruction-text">Your approval rating starts at 50% — neutral. It rises or falls based on how much you improve the city from where you started. Your election result depends on it.</div>
+          </div>
+        </div>
+
+        <div class="instruction-item">
+          <span class="instruction-icon">⚑</span>
+          <div class="instruction-body">
+            <div class="instruction-heading">Decisions have memory</div>
+            <div class="instruction-text">Some choices trigger follow-up scenarios months later. A factory approved today may send workers back to your door next year. Read carefully.</div>
+          </div>
+        </div>
+
+        <div class="instruction-item">
+          <span class="instruction-icon">🏙</span>
+          <div class="instruction-body">
+            <div class="instruction-heading">Watch the city change</div>
+            <div class="instruction-text">The city skyline reflects the state of your city. A polluted skyline, a prosperous one, a struggling one — your decisions shape what it becomes.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="instruction-btn" id="instructionBtn">Begin Your Term →</button>
 
     </div>
   </div>
