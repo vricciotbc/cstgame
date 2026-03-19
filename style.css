@@ -1844,6 +1844,31 @@ html, body {
   text-shadow: 0 0 14px rgba(245, 200, 66, 0.4);
 }
 
+.election-second-term-btn {
+  margin-top: 4px;
+  padding: 14px 36px;
+  background: #4ade80;
+  color: #0a1a0f;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 18px rgba(74, 222, 128, 0.35);
+}
+
+.election-second-term-btn:hover {
+  background: #86efac;
+  transform: scale(1.04);
+  box-shadow: 0 6px 26px rgba(74, 222, 128, 0.5);
+}
+
+.election-second-term-btn:active {
+  transform: scale(0.99);
+}
+
 .election-play-btn {
   margin-top: 4px;
   padding: 12px 32px;
